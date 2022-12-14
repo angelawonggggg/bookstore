@@ -18,4 +18,4 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ## Production
 
-The app is deployed on Vercel, here is the link https://bookstore-three-gamma.vercel.app/
+The app is deployed on Vercel, here is the link https://bookstore-angelawonggggg.vercel.app/
