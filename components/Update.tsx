@@ -7,7 +7,6 @@ import { Book } from "../type";
 
 function Update({ close, book }: { close: () => void; book: Book }) {
   const dispatch = useDispatch();
-
   const [bookInfo, setBookInfo] = useState({
     id: book.id,
     name: book.name,

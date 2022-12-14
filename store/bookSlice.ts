@@ -54,16 +54,8 @@ export const bookSlice = createSlice({
         description: "bestseller",
       },
     ],
-    isShowAdd: false,
-    isShowUpdate: false,
   },
   reducers: {
-    showAdd: (state) => {
-      state.isShowAdd = true;
-    },
-    closeAdd: (state) => {
-      state.isShowAdd = false;
-    },
     addBook: (state, action) => {
       state.value.push(action.payload.book);
     },
@@ -84,6 +76,5 @@ export const bookSlice = createSlice({
   },
 });
 
-export const { addBook, deleteBook, updateBook, showAdd, closeAdd } =
-  bookSlice.actions;
+export const { addBook, deleteBook, updateBook } = bookSlice.actions;
 export default bookSlice.reducer;

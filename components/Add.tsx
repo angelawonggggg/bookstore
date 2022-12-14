@@ -3,16 +3,18 @@ import styles from "../styles/Home.module.css";
 import { useState } from "react";
 import { Book } from "../type";
 import { useDispatch } from "react-redux";
-import { closeAdd, addBook } from "../store/bookSlice";
+import { addBook } from "../store/bookSlice";
 
-function Add({ close }: { close: React.MouseEventHandler }) {
+function Add({ close }: { close: () => void }) {
   const dispatch = useDispatch();
+
   const [newBook, setNewBook] = useState({
     id: 0,
     name: "",
     price: 0,
     category: "",
     description: "",
+    writable: true,
   });
 
   const addBookToList = (book: Book) => {
@@ -22,7 +24,7 @@ function Add({ close }: { close: React.MouseEventHandler }) {
       book,
     };
     dispatch(addBook(addBookAction));
-    dispatch(closeAdd());
+    close();
   };
 
   return (
