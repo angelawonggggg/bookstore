@@ -1,4 +1,5 @@
 import styles from "../styles/Home.module.css";
+import { Book as BookType } from "../type";
 import Book from "../components/Book";
 import Add from "../components/Add";
 import { useSelector, useDispatch } from "react-redux";
@@ -18,7 +19,7 @@ export default function Home() {
       <div>{isShowAdd && <Add close={() => dispatch(closeAdd())} />}</div>
 
       <div className={styles.bookList}>
-        {initialList.map((book: Book) => (
+        {initialList.map((book: BookType) => (
           <div key={book?.id}>
             <div>
               <Book book={book} />
