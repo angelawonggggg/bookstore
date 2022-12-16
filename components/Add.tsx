@@ -1,12 +1,13 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
-import { useState } from "react";
+import { useState, useId } from "react";
 import { Book } from "../type";
 import { useDispatch } from "react-redux";
 import { addBook } from "../store/bookSlice";
 
 function Add({ close }: { close: () => void }) {
   const dispatch = useDispatch();
+  const bookId = useId();
 
   const [newBook, setNewBook] = useState({
     id: 0,
@@ -19,7 +20,9 @@ function Add({ close }: { close: () => void }) {
 
   const addBookToList = (book: Book) => {
     // simple id generator for each newly added book
-    book.id = Math.floor(Math.random() * 1000);
+    // book.id = Math.floor(Math.random() * 1000);
+    book.id = bookId;
+    console.log(bookId, book);
     const addBookAction = {
       book,
     };
