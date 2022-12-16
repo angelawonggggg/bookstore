@@ -19,10 +19,7 @@ function Add({ close }: { close: () => void }) {
   });
 
   const addBookToList = (book: Book) => {
-    // simple id generator for each newly added book
-    // book.id = Math.floor(Math.random() * 1000);
     book.id = bookId;
-    console.log(bookId, book);
     const addBookAction = {
       book,
     };
